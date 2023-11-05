@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List 2-6</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <h1>Vue3</h1>
+        <div id="app">
+            <div v-html="message"></div>
+        </div>
+
+        <script>
+            const list = ['One', 'Two', 'Three']
+            const appdata = {
+                data() {
+                    return {
+                        // `（バックティック文字）で囲まれたテキストをテンプレートリテラルと呼ぶ。
+                        // テンプレートリテラル中では、テキストを改行して記述することができる。
+                        // また、プレースホルダーを記述することができる。
+                        message: `<ul>
+                                <li>${list[0]}</li>
+                                <li>${list[1]}</li>
+                                <li>${list[2]}</li>
+                            </ul>`
+                    }
+                }
+            }
+
+            let app = Vue.createApp(appdata)
+            app.mount('#app')
+        </script>
+    </body>
+</html>
