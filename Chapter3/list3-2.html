@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>List 3-1</title>
+        <title>List 3-2</title>
         <script src="https://unpkg.com/vue@next"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -26,9 +26,14 @@
 
             let app = Vue.createApp(appdata)
 
-            // コンポーネントを作成
+            // コンポーネントを作成する
             app.component('hello', {
-                template: '<p class="alert alert-primary">Hello!</p>'
+                data() {
+                    return {
+                        message: 'これはコンポーネントの新しいメッセージです。'
+                    }
+                },
+                template: '<p class="alert alert-primary">{{ message }}</p>'
             })
 
             app.mount('#app')
